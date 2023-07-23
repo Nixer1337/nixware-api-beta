@@ -5,6 +5,8 @@ import glob
 lua_types = []
 for file in glob.glob("docs/types/*.md"):
     lua_types.append(file[11:-3])
+for file in glob.glob("docs/menu/types/*.md"):
+    lua_types.append(file[16:-3])
 
 def define_env(env):
     "Hook function"

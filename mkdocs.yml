@@ -1,8 +1,17 @@
 site_name: Nixware API
 nav:
-  - 'index.md'
+  - 'home': 'index.md'
   - 'render.md'
-  - 'menu.md'
+  - 'menu':
+    - 'home': 'menu/index.md'
+    - 'types':
+      - 'check_box_t': 'menu/types/check_box_t.md'
+      - 'slider_int_t': 'menu/types/slider_int_t.md'
+      - 'slider_float_t': 'menu/types/slider_float_t.md'
+      - 'combo_box_t': 'menu/types/combo_box_t.md'
+      - 'multi_combo_box_t': 'menu/types/multi_combo_box_t.md'
+      - 'key_bind_t': 'menu/types/key_bind_t.md'
+      - 'color_picker_t': 'menu/types/color_picker_t.md'
   - 'globals.md'
   - 'types':
     - 'vec2_t': 'types/vec2_t.md'
