@@ -1,12 +1,17 @@
 from markdown_table_generator import generate_markdown, table_from_string_list, Alignment
 import glob
+from pathlib import Path
 
 # parse types folder to get all types
-lua_types = []
-for file in glob.glob("docs/types/*.md"):
-    lua_types.append(file[11:-3])
-for file in glob.glob("docs/menu/types/*.md"):
-    lua_types.append(file[16:-3])
+types_paths = ["docs/types/*.md", "docs/menu/types/*.md"]
+lua_types = {}
+for path in types_paths:
+    for file in glob.glob(path):
+        #type name = file name without extension
+        type_name = Path(file).stem
+        p = Path(file)
+        type_path = p.relative_to(*p.parts[:1]).with_suffix('')
+        lua_types[type_name] = type_path
 
 def define_env(env):
     "Hook function"
@@ -27,9 +32,10 @@ def define_env(env):
 
     def get_type_link(type_name) -> str:
         #if first characters of type_name matches a type, return that type
-        for lua_type in lua_types:
-            if type_name.startswith(lua_type):
-                return f"/types/{lua_type}"
+        lua_types_keys = list(lua_types.keys())
+        for key in lua_types_keys:
+            if type_name.startswith(key):
+                return f"../{lua_types[key]}"
         return ""
     
     def format_lua_type(type_name) -> str:
