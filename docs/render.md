@@ -59,16 +59,16 @@
 {{ define_function("render", "circle", [
     ["pos",         "vec2_t",   "Position of the circle"],
     ["radius",      "number",   "Radius of the circle"],
-    ["color_in",    "color_t",  "Color of the center of the circle"],
-    ["color_out",   "color_t",  "Color of the edge of the circle"],
+    ["segments",    "number",   "Count of the circle segments"],
+    ["filled",      "boolean",  "Is the circle filled"],
+    ["color",       "color_t",  "Color of the circle"],
 ]) }}
 ---
 {{ define_function("render", "circle_fade", [
     ["pos",         "vec2_t",   "Position of the circle"],
     ["radius",      "number",   "Radius of the circle"],
-    ["segments",    "number",   "Count of the circle segments"],
-    ["filled",      "boolean",  "Is the circle filled"],
-    ["color",       "color_t",  "Color of the circle"],
+    ["color_in",    "color_t",  "Color of the center of the circle"],
+    ["color_out",   "color_t",  "Color of the edge of the circle"],
 ]) }}
 ---
 {{ define_function("render", "filled_polygon", [
