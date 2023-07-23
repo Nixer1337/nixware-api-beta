@@ -35,7 +35,7 @@ def define_env(env):
         lua_types_keys = list(lua_types.keys())
         for key in lua_types_keys:
             if type_name.startswith(key):
-                return f"../{lua_types[key]}"
+                return f"../{lua_types[key]}/"
         return ""
     
     def format_lua_type(type_name) -> str:
