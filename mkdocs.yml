@@ -1,0 +1,44 @@
+site_name: Nixware API
+nav:
+  - 'index.md'
+  - 'render.md'
+  - 'menu.md'
+  - 'globals.md'
+  - 'types':
+    - 'vec2_t': 'types/vec2_t.md'
+    - 'vec3_t': 'types/vec3_t.md'
+    - 'color_t': 'types/color_t.md'
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.tracking
+    - navigation.path
+    - navigation.expand
+    - navigation.prune
+    - navigation.top
+    - content.code.copy
+  palette:
+    primary: darkgrey
+    scheme: slate
+markdown_extensions:
+  - toc:
+      title: On this page
+      permalink: true
+  - tables
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+extra_css:
+  - stylesheets/extra.css
+extra:
+  generator: false
+plugins:
+  - macros
+watch:
+  - main.py

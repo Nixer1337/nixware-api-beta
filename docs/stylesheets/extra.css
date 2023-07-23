@@ -1,0 +1,34 @@
+[data-md-color-scheme="slate"] {
+    --md-hue: 210;
+    --md-default-bg-color: rgb(23, 23, 23);
+    --md-primary-fg-color: hsla(231deg, 48%, 48%, 1);
+    --md-default-fg-color--light: white;
+}
+
+[data-md-color-scheme="slate"] .md-header {
+    background-color: rgb(40, 39, 39);
+}
+
+.md-footer {
+    display: none;
+}
+
+.md-typeset h1, .md-typeset h2{
+    font-weight: 400;
+}
+
+.md-typeset__table{
+    display: block;
+}
+
+.md-typeset__table table{
+    display: table!important;
+}
+
+.md-typeset table:not([class]), .md-typeset code {
+    border-radius: .2rem;
+}
+
+.md-typeset table:not([class]) th {
+    background-color: rgba(255,255,255,0.05) !important;
+}
