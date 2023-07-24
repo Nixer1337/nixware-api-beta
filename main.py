@@ -1,6 +1,7 @@
 from markdown_table_generator import generate_markdown, table_from_string_list, Alignment
 import glob
 from pathlib import Path
+from textwrap import indent
 
 # parse types folder to get all types
 types_paths = ["docs/types/*.md", "docs/menu/types/*.md"]
@@ -45,7 +46,7 @@ def define_env(env):
         return f"`{type_name}`"
 
     @env.macro
-    def define_function(table_name: str, func_name: str, temp_args: list[list], return_type: str = ""):
+    def define_function(table_name: str, func_name: str, temp_args: list[list], return_type: str = "", is_not_static: bool = False):
         args: list[argument] = []
         for arg in temp_args:
             args.append(argument(arg))
@@ -58,16 +59,20 @@ def define_env(env):
             if arg.is_optional:
                 arg.name = f"{arg.name}?"
             argument_list.append(f"{arg.name}: {arg.type}")
-        colon = ""
+        return_colon = ""
         if return_type != "":
-            colon = ":"
+            return_colon = ":"
             return_type = " " + format_lua_type(return_type)
         markdown_table = ""
+        function_separator = "."
+        if is_not_static:
+            function_separator = ":"
         if len(markdown_arguments_list) > 1:
             markdown_table = generate_markdown(table_from_string_list(rows=markdown_arguments_list))
         return f"""
+
 ### **{func_name}**
-<font size=5>`:::typescript {table_name}.{func_name}({", ".join(argument_list)}){colon}`{return_type}</font>
+<font size=5>`:::typescript {table_name}{function_separator}{func_name}({", ".join(argument_list)}){return_colon}`{return_type}</font>
 
 { markdown_table }
 

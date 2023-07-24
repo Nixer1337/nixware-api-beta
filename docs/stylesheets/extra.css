@@ -3,6 +3,7 @@
     --md-default-bg-color: rgb(23, 23, 23);
     --md-primary-fg-color: hsla(231deg, 48%, 48%, 1);
     --md-default-fg-color--light: white;
+    --md-code-hl-comment-color: #ffffffb3;
 }
 
 [data-md-color-scheme="slate"] .md-header {
@@ -31,4 +32,13 @@
 
 .md-typeset table:not([class]) th {
     background-color: rgba(255,255,255,0.05) !important;
+}
+
+.md-typeset .admonition, .md-typeset details {
+    font-size: .8rem;
+    margin: .8em 0;
+}
+
+.md-typeset details summary, .md-typeset .admonition-title {
+    font-size: .7rem;
 }

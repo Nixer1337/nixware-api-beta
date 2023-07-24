@@ -2,9 +2,9 @@
 ---
 ## Functions
 {{ define_function("render", "setup_font", [
-    ["filename",    "string",   "Path to the font"],
-    ["size",        "number",   "Font size"],
-    ["flags",       "number",   "Font flags"],
+    ["filename", "string", "Path to the font"],
+    ["size",     "number", "Font size"],
+    ["flags",    "number", "Font flags"],
 ], "font_t") }}
 ---
 {{ define_function("render", "world_to_screen", [
@@ -12,56 +12,65 @@
 ], "vec3_t") }}
 ---
 {{ define_function("render", "calc_text_size", [
-    ["text",    "string",   "Text size of which will be calculated"],
-    ["font",    "font_t",   "Font object"],
-    ["size",   "number",   "Font size", true],
+    ["text", "string", "Text size of which will be calculated"],
+    ["font", "font_t", "Font object"],
+    ["size", "number", "Font size", true],
 ], "vec2_t") }}
 ---
 ## Draw functions
 {{ define_function("render", "text", [
-    ["text",    "string",   "Text to render"],
-    ["font",    "font_t",   "Font object"],
-    ["pos",     "vec2_t",   "Position of where text will be rendered"],
-    ["color",   "color_t",  "Text color"],
-    ["size",    "number",   "Text size", true],
+    ["text",    "string",  "Text to render"],
+    ["font",    "font_t",  "Font object"],
+    ["pos",     "vec2_t",  "Position of where text will be rendered"],
+    ["color",   "color_t", "Text color"],
+    ["size",    "number",  "Text size", true],
 ]) }}
 ---
 {{ define_function("render", "line", [
-    ["from",    "vec2_t",   "Start position of the line"],
-    ["to",      "vec2_t",   "End position of the line"],
-    ["color",   "color_t",  "Color of the line"],
+    ["from",      "vec2_t",  "Start position of the line"],
+    ["to",        "vec2_t",  "End position of the line"],
+    ["color",     "color_t", "Color of the line"],
+    ["thickness", "number",  "Thickness of the line", true],
 ]) }}
 ---
 {{ define_function("render", "rect", [
-    ["from",        "vec2_t",   "Start position of the rectangle"],
-    ["to",          "vec2_t",   "End position of the rectangle"],
-    ["color",       "color_t",  "Color of the rectangle"],
-    ["rounding",    "number",   "Rounding of the rectangle", true],
+    ["from",     "vec2_t",  "Start position of the rectangle"],
+    ["to",       "vec2_t",  "End position of the rectangle"],
+    ["color",    "color_t", "Color of the rectangle"],
+    ["rounding", "number",  "Rounding of the rectangle", true],
+    ["thickness","number",  "Thickness of the rectangle", true],
 ]) }}
 ---
 {{ define_function("render", "rect_filled", [
-    ["from",        "vec2_t",   "Start position of a rectangle"],
-    ["to",          "vec2_t",   "End position of the rectangle"],
-    ["color",       "color_t",  "Color of the rectangle"],
-    ["rounding",    "number",   "Rounding of the rectangle", true],
+    ["from",     "vec2_t",  "Start position of a rectangle"],
+    ["to",       "vec2_t",  "End position of the rectangle"],
+    ["color",    "color_t", "Color of the rectangle"],
+    ["rounding", "number",  "Rounding of the rectangle", true],
 ]) }}
 ---
 {{ define_function("render", "rect_filled_fade", [
-    ["from",            "vec2_t",   "Start position of a rectangle"],
-    ["to",              "vec2_t",   "Font object"],
-    ["col_upr_left",    "color_t",  "Color of the top left corner"],
-    ["col_upr_right",   "color_t",  "Color of the top right corner"],
-    ["col_bot_right",   "color_t",  "Color of the bottom right corner"],
-    ["col_bot_left",    "color_t",  "Color of the bottom left corner"],
+    ["from",          "vec2_t",  "Start position of a rectangle"],
+    ["to",            "vec2_t",  "Font object"],
+    ["col_upr_left",  "color_t", "Color of the top left corner"],
+    ["col_upr_right", "color_t", "Color of the top right corner"],
+    ["col_bot_right", "color_t", "Color of the bottom right corner"],
+    ["col_bot_left",  "color_t", "Color of the bottom left corner"],
 ]) }}
 <!-- ["rounding",    "number",   "Rounding of the rectangle", true], -->
 ---
 {{ define_function("render", "circle", [
-    ["pos",         "vec2_t",   "Position of the circle"],
-    ["radius",      "number",   "Radius of the circle"],
-    ["segments",    "number",   "Count of the circle segments"],
-    ["filled",      "boolean",  "Is the circle filled"],
-    ["color",       "color_t",  "Color of the circle"],
+    ["pos",      "vec2_t",  "Position of the circle"],
+    ["radius",   "number",  "Radius of the circle"],
+    ["segments", "number",  "Count of the circle segments"],
+    ["color",    "color_t", "Color of the circle"],
+    ["thickness","number",  "Thickness of the circle", true],
+]) }}
+---
+{{ define_function("render", "circle_filled", [
+    ["pos",      "vec2_t",  "Position of the circle"],
+    ["radius",   "number",  "Radius of the circle"],
+    ["segments", "number",  "Count of the circle segments"],
+    ["color",    "color_t", "Color of the circle"],
 ]) }}
 ---
 {{ define_function("render", "circle_fade", [
