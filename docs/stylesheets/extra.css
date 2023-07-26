@@ -1,9 +1,23 @@
 [data-md-color-scheme="slate"] {
     --md-hue: 210;
-    --md-default-bg-color: rgb(23, 23, 23);
-    --md-primary-fg-color: hsla(231deg, 48%, 48%, 1);
+    --md-default-bg-color: #171717;
+    --md-primary-fg-color: #7187ff;
     --md-default-fg-color--light: white;
     --md-code-hl-comment-color: #ffffffb3;
+}
+
+.md-typeset a {
+    font-weight: 500;
+}
+
+.md-typeset a code {
+    background-color: #283444;
+    box-shadow: 0px 0px 7px 1px rgb(40,52,68);
+    transition: background-color 125ms, box-shadow 125ms;
+}
+
+.md-typeset a:focus code, .md-typeset a:hover code{
+    box-shadow: 0px 0px 7px 1px var(--md-accent-fg-color--transparent);
 }
 
 [data-md-color-scheme="slate"] .md-header {

@@ -17,6 +17,7 @@
     local my_checkbox = menu.add_check_box("My Checkbox!", "Misc/Misc")
     ```
 ??? question "What is "context"?"
+    With context you can add a context menu to your element, which will be shown if you right click on it.
     ``` lua linenums="1"
     local my_checkbox = menu.add_check_box("My Checkbox!", "Misc/Misc", false, "Misc/Misc/Test")
     --"Misc/Misc/Test" is the context location
@@ -59,6 +60,12 @@
     ["items",         "string[]", "Array of items for the combo box"],
     ["default_value", "number",   "Default value of the combo box", true],
 ], "combo_box_t") }}
+??? example
+    ``` lua linenums="1"
+    local combobox =
+        menu.add_combo_box("Extra", "Ragebot/Globals", {"DDoS on peek", "Crash all enemies"}, 0)
+    ```
+
 ---
 {{ define_function("menu", "add_multi_combo_box", [
     ["label",         "string",   "Label of the multi combo box"],
@@ -66,6 +73,12 @@
     ["items",         "string[]", "Array of items for the multi combo box"],
     ["default_value", "number",   "Default value of the multi combo box", true],
 ], "multi_combo_box_t") }}
+<!-- ---
+??? example
+    ``` lua linenums="1"
+    local combobox =
+        menu.add_combo_box("Extra", "Ragebot/Globals", {"DDoS on peek", "Crash all enemies"}, 0)
+    ``` -->
 ---
 {{ define_function("menu", "add_key_bind", [
     ["label",           "string",  "Label of the key bind"],
@@ -75,6 +88,16 @@
     ["type",            "number",  "The type for the key bind", true],
     ["display_in_list", "boolean", "Whether to display the key bind in the key bind list", true],
 ], "key_bind_t") }}
+??? example
+    This code will create a key bind attached to check box
+    ``` lua linenums="1"
+    local box = menu.add_check_box("best cheat", "Ragebot/Globals")
+    local bind = menu.add_key_bind("best cheat", "Ragebot/Globals", false)
+    ```
+    This is how to create a standalone key bind
+    ``` lua linenums="1"
+    local bind = menu.add_key_bind("best cheat", "Ragebot/Globals")
+    ```
 ---
 {{ define_function("menu", "add_color_picker", [
     ["label",         "string",  "Label of the color picker"],
@@ -83,39 +106,61 @@
     ["show_alpha",    "boolean", "Whether to show the alpha channel", true],
     ["default_value", "color_t", "Default color for the color picker", true],
 ], "color_picker_t") }}
+??? example
+    This code will create a color picker attached to check box
+    ``` lua linenums="1"
+    local box = menu.add_check_box("test", "Ragebot/Globals")
+    local color_picker = menu.add_color_picker("test", "Ragebot/Globals", false)
+    ```
+    This code will create a standalone color picker
+    ``` lua linenums="1"
+    local color_picker = menu.add_color_picker("test", "Ragebot/Globals")
+    ```
 ---
 ## Functions to find elements
 {{ define_function("menu", "find_check_box", [
-    ["location", "string", "Location of the check box"],
     ["label",    "string", "Label of the check box"],
+    ["location", "string", "Location of the check box"],
 ], "check_box_t") }}
+??? example
+    ``` lua linenums="1"
+    local ragebot_enabled = menu.find_check_box("Enabled", "Ragebot/Globals")
+    ```
 ---
 {{ define_function("menu", "find_slider_int", [
-    ["location", "string", "Location of the slider"],
     ["label",    "string", "Label of the slider"],
+    ["location", "string", "Location of the slider"],
 ], "slider_int_t") }}
+??? example
+    ``` lua linenums="1"
+    local ragebot_fov = menu.find_slider_int("FOV", "Ragebot/Globals")
+    ```
 ---
 {{ define_function("menu", "find_slider_float", [
-    ["location", "string", "Location of the slider"],
     ["label",    "string", "Label of the slider"],
+    ["location", "string", "Location of the slider"],
 ], "slider_float_t") }}
+??? example
+    ``` lua linenums="1"
+    local viewmodel_fov = menu.find_slider_float("FOV", "Visuals/Viewmodel")
+    ```
 ---
 {{ define_function("menu", "find_combo_box", [
-    ["location", "string", "Location of the combo box"],
     ["label",    "string", "Label of the combo box"],
+    ["location", "string", "Location of the combo box"],
 ], "combo_box_t") }}
 ---
 {{ define_function("menu", "find_multi_combo_box", [
-    ["location", "string", "Location of the multi combo box"],
     ["label",    "string", "Label of the multi combo box"],
+    ["location", "string", "Location of the multi combo box"],
 ], "multi_combo_box_t") }}
 ---
 {{ define_function("menu", "find_key_bind", [
-    ["location", "string", "Location of the key bind"],
     ["label",    "string", "Label of the key bind"],
+    ["location", "string", "Location of the key bind"],
 ], "key_bind_t") }}
 ---
 {{ define_function("menu", "find_color_picker", [
-    ["location", "string", "Location of the color picker"],
     ["label",    "string", "Label of the color picker"],
+    ["location", "string", "Location of the color picker"],
 ], "color_picker_t") }}

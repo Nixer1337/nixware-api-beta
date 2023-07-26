@@ -6,10 +6,30 @@
     ["size",     "number", "Font size"],
     ["flags",    "number", "Font flags"],
 ], "font_t") }}
+??? example
+    ``` lua linenums="1"
+    local font = render.setup_font("C:/Windows/Fonts/verdana.ttf", 32, 0)
+    register_callback("paint", function()
+        render.text("hello from nixware lua api!", font, vec2_t.new(100, 100), color_t.new(1, 1, 1, 1))
+    end)
+    ```
+!!! warning
+    If you specify a font that does not exist, return value will be `nil`.
 ---
 {{ define_function("render", "world_to_screen", [
     ["pos", "vec3_t", "World position"],
 ], "vec3_t") }}
+??? example
+    ``` lua linenums="1"
+    register_callback("paint", function()
+        local w2s = render.world_to_screen(vec3_t.new(0, 0, 0))
+        if w2s then
+            render.circle_fade(w2s, 20, color_t.new(1, 0.25, 0.25, 0.5), color_t.new(0, 0, 0, 1))
+        end
+    end)
+    ```
+!!! warning
+    If world position is not on the screen, return value will be `nil`.
 ---
 {{ define_function("render", "calc_text_size", [
     ["text", "string", "Text size of which will be calculated"],
