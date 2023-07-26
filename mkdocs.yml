@@ -21,6 +21,7 @@ theme:
   name: material
   logo: assets/logo.png
   favicon: assets/logo.png
+  custom_dir: overrides
   features:
     - navigation.instant
     - navigation.instant.prefetch
@@ -51,9 +52,11 @@ markdown_extensions:
 extra_css:
   - stylesheets/extra.css
 extra:
-  generator: false
+  generator: true
+copyright: Copyright &copy; 2016 - 2020 Martin Donath
 plugins:
   - macros
   - search
 watch:
   - main.py
+  - overrides/
