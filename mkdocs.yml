@@ -1,9 +1,9 @@
 site_name: Nixware API
 nav:
-  - 'home': 'index.md'
+  - 'Home': 'index.md'
   - 'render.md'
   - 'menu':
-    - 'home': 'menu/index.md'
+    - 'menu': 'menu/index.md'
     - 'types':
       - 'check_box_t': 'menu/types/check_box_t.md'
       - 'slider_int_t': 'menu/types/slider_int_t.md'
@@ -19,15 +19,18 @@ nav:
     - 'color_t': 'types/color_t.md'
 theme:
   name: material
+  logo: assets/logo.png
+  favicon: assets/logo.png
   features:
     - navigation.instant
     - navigation.instant.prefetch
     - navigation.tracking
-    - navigation.path
-    - navigation.expand
     - navigation.prune
     - navigation.top
+    - navigation.indexes
     - content.code.copy
+    - search.suggest
+    - search.highlight
   palette:
     primary: darkgrey
     scheme: slate
@@ -51,5 +54,6 @@ extra:
   generator: false
 plugins:
   - macros
+  - search
 watch:
   - main.py

@@ -5,6 +5,20 @@
     --md-default-fg-color--light: white;
     --md-code-hl-comment-color: #ffffffb3;
 }
+.md-typeset h1 {
+    font-weight: 600!important;
+}
+
+.md-header__button.md-logo img, .md-header__button.md-logo svg {
+    display: block;
+    width: 45px;
+    height: 45px;
+}
+
+.md-header__button.md-logo {
+    margin: 0;
+    padding: 0;
+}
 
 .md-typeset a {
     font-weight: 500;

@@ -1,5 +1,4 @@
 # render
----
 ## Functions
 {{ define_function("render", "setup_font", [
     ["filename", "string", "Path to the font"],

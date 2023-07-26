@@ -1,3 +1,3 @@
 # globals
 
-## Loading Lua scripts
+## soon to be added

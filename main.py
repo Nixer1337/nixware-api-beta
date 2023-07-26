@@ -2,6 +2,7 @@ from markdown_table_generator import generate_markdown, table_from_string_list, 
 import glob
 from pathlib import Path
 from textwrap import indent
+from math import floor
 
 # parse types folder to get all types
 types_paths = ["docs/types/*.md", "docs/menu/types/*.md"]
@@ -77,3 +78,7 @@ def define_env(env):
 { markdown_table }
 
 """
+    @env.macro
+    def inline_avatar(id):
+        thousands = floor(id / 1000)
+        return f'<img src="https://nixware.cc/data/avatars/o/{thousands}/{id}.jpg" alt="id {id} avatar" style="transform: translate(0, 20%); height: 1em; border-radius: 100%" />'

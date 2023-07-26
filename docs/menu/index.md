@@ -1,5 +1,3 @@
-# home
----
 ## Functions to add elements
 
 !!! info
