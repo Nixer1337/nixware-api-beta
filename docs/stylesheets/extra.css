@@ -1,3 +1,7 @@
+body{
+    width: 100vw;
+}
+
 [data-md-color-scheme="slate"] {
     --md-hue: 210;
     --md-default-bg-color: #171717;
