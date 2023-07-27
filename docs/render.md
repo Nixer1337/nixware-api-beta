@@ -1,10 +1,13 @@
 # render
 ## Functions
+
 {{ define_function("render", "setup_font", [
     ["filename", "string", "Path to the font"],
     ["size",     "number", "Font size"],
-    ["flags",    "number", "Font flags"],
+    ["flags",    "number", "Font flags", true],
 ], "font_t") }}
+!!! warning
+    If you specify a font that does not exist, return value will be `nil`.
 ??? example
     ``` lua linenums="1"
     local font = render.setup_font("C:/Windows/Fonts/verdana.ttf", 32, 0)
@@ -12,12 +15,20 @@
         render.text("hello from nixware lua api!", font, vec2_t.new(100, 100), color_t.new(1, 1, 1, 1))
     end)
     ```
+---
+{{ define_function("render", "calc_text_size", [
+    ["text", "string", "Text size of which will be calculated"],
+    ["font", "font_t", "Font object"],
+    ["size", "number", "Font size", true],
+], "vec2_t") }}
 !!! warning
     If you specify a font that does not exist, return value will be `nil`.
 ---
 {{ define_function("render", "world_to_screen", [
     ["pos", "vec3_t", "World position"],
 ], "vec3_t") }}
+!!! warning
+    If world position is not on the screen, return value will be `nil`.
 ??? example
     ``` lua linenums="1"
     register_callback("paint", function()
@@ -27,19 +38,11 @@
         end
     end)
     ```
-!!! warning
-    If world position is not on the screen, return value will be `nil`.
----
-{{ define_function("render", "calc_text_size", [
-    ["text", "string", "Text size of which will be calculated"],
-    ["font", "font_t", "Font object"],
-    ["size", "number", "Font size", true],
-], "vec2_t") }}
 ---
 ## Draw functions
 {{ define_function("render", "text", [
     ["text",    "string",  "Text to render"],
-    ["font",    "font_t",  "Font object"],
+    ["font",    "font_t",  "Font object, or `0` = default font, or `1` = pixel font"],
     ["pos",     "vec2_t",  "Position of where text will be rendered"],
     ["color",   "color_t", "Text color"],
     ["size",    "number",  "Text size", true],

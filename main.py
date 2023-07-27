@@ -45,40 +45,66 @@ def define_env(env):
         if type_link != "":
             return f"[`{type_name}`]({type_link})"
         return f"`{type_name}`"
-
+    
     @env.macro
-    def define_function(table_name: str, func_name: str, temp_args: list[list], return_type: str = "", is_not_static: bool = False):
-        args: list[argument] = []
-        for arg in temp_args:
-            args.append(argument(arg))
-        argument_list: list[str] = []
+    def get_arguments_table(temp_args: list[list]):
         markdown_arguments_list: list[list[str | None]] = [["Name", "Type", "Description"]]
-        for arg in args:
+        for temp_arg in temp_args:
+            arg = argument(temp_arg)
             if arg.is_optional:
                 arg.description = f"Optional. {arg.description}"
-            markdown_arguments_list.append([f"**{arg.name}**", format_lua_type(arg.type), arg.description])
+            if arg.type[0] == '"' or arg.type[0] == "'":
+                pass
+            else:
+                markdown_arguments_list.append([f"**{arg.name}**", format_lua_type(arg.type), arg.description])
+        if len(temp_args) > 0:
+            return generate_markdown(table_from_string_list(rows=markdown_arguments_list))
+        return ""
+    
+    @env.macro
+    def get_function_definition(table_name: str, func_name: str, temp_args: list[list], return_type: str = "", is_not_static: bool = False):
+        argument_list: list[str] = []
+        for temp_arg in temp_args:
+            arg = argument(temp_arg)
             if arg.is_optional:
                 arg.name = f"{arg.name}?"
-            argument_list.append(f"{arg.name}: {arg.type}")
+            if arg.type[0] == '"' or arg.type[0] == "'":
+                argument_list.append(f"{arg.type}")
+            else:  
+                argument_list.append(f"{arg.name}: {arg.type}")
         return_colon = ""
         if return_type != "":
             return_colon = ":"
             return_type = " " + format_lua_type(return_type)
-        markdown_table = ""
         function_separator = "."
         if is_not_static:
             function_separator = ":"
-        if len(markdown_arguments_list) > 1:
-            markdown_table = generate_markdown(table_from_string_list(rows=markdown_arguments_list))
+        if table_name == "":
+            function_separator = ""
+        return f"""
+<font size=5>`:::typescript {table_name}{function_separator}{func_name}({", ".join(argument_list)}){return_colon}`{return_type}</font>        
+"""
+
+    @env.macro
+    def get_function_table_and_definition(table_name: str, func_name: str, temp_args: list[list], return_type: str = "", is_not_static: bool = False, indentation: int = 1):
+        return indent(f"""
+
+{ get_function_definition(table_name, func_name, temp_args, return_type, is_not_static) }
+{ get_arguments_table(temp_args) }
+
+""", " " * indentation * 4)
+
+    @env.macro
+    def define_function(table_name: str, func_name: str, temp_args: list[list], return_type: str = "", is_not_static: bool = False):
         return f"""
 
 ### **{func_name}**
-<font size=5>`:::typescript {table_name}{function_separator}{func_name}({", ".join(argument_list)}){return_colon}`{return_type}</font>
 
-{ markdown_table }
+{ get_function_table_and_definition(table_name, func_name, temp_args, return_type, is_not_static, 0) }
 
 """
-    @env.macro
-    def inline_avatar(id):
-        thousands = floor(id / 1000)
-        return f'<img src="https://nixware.cc/data/avatars/o/{thousands}/{id}.jpg" alt="id {id} avatar" style="transform: translate(0, 20%); height: 1em; border-radius: 100%" />'
+    
+    # @env.macro
+    # def inline_avatar(id):
+    #     thousands = floor(id / 1000)
+    #     return f'<img src="https://nixware.cc/data/avatars/o/{thousands}/{id}.jpg" alt="id {id} avatar" style="transform: translate(0, 20%); height: 1em; border-radius: 100%" />'

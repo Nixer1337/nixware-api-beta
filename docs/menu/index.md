@@ -69,8 +69,13 @@
     ["label",         "string",   "Label of the multi combo box"],
     ["location",      "string",   "Location of the multi combo box"],
     ["items",         "string[]", "Array of items for the multi combo box"],
-    ["default_value", "number",   "Default value of the multi combo box", true],
+    ["default_value", "number[]", "List of active by default indeces", true],
 ], "multi_combo_box_t") }}
+??? example
+    ``` lua linenums="1"
+    local combobox =
+        menu.add_combo_box("Extra", "Ragebot/Globals", {"DDoS on peek", "Crash all enemies", "Crash myself"}, {0, 1})
+    ```
 <!-- ---
 ??? example
     ``` lua linenums="1"
@@ -162,3 +167,7 @@
     ["label",    "string", "Label of the color picker"],
     ["location", "string", "Location of the color picker"],
 ], "color_picker_t") }}
+---
+## Other functions
+{{ define_function("menu", "dump", []) }}
+Prints all elements to console

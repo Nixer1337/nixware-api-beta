@@ -13,10 +13,14 @@ nav:
       - 'key_bind_t': 'menu/types/key_bind_t.md'
       - 'color_picker_t': 'menu/types/color_picker_t.md'
   - 'globals.md'
+  - 'events.md'
   - 'types':
     - 'vec2_t': 'types/vec2_t.md'
     - 'vec3_t': 'types/vec3_t.md'
+    - 'angle_t': 'types/angle_t.md'
     - 'color_t': 'types/color_t.md'
+    - 'user_cmd_t': 'types/user_cmd_t.md'
+    - 'game_event_t': 'types/game_event_t.md'
 theme:
   name: material
   logo: assets/logo.png
@@ -49,6 +53,8 @@ markdown_extensions:
   - pymdownx.superfences
   - admonition
   - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true 
 extra_css:
   - stylesheets/extra.css
 extra:

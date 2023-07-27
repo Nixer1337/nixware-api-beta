@@ -1,4 +1,5 @@
 {{ define_function("checkbox", "get", [], "boolean", True) }}
+---
 {{ define_function("checkbox", "set", [
     ["value", "boolean", "Value to set the check box to"]
 ], "", True) }}

@@ -41,11 +41,11 @@ body{
 .glow-link {
     background-color: #28344444;
     border-radius: .2rem;
-    box-shadow: 0 0 10px 0px rgb(40,52,68,0.5);
+    box-shadow: 0 0 7px 0px rgba(40, 52, 68, 0.5);
 }
-.glow-link:focus, .glow-link:hover{
-    box-shadow: 0 0 15px 1px rgb(40,52,68,0.5);
-}
+/* .glow-link:focus, .glow-link:hover{
+    box-shadow: 0 0 10px 1px rgb(40,52,68,0.5);
+} */
 
 [data-md-color-scheme="slate"] .md-header {
     background-color: rgb(40, 39, 39);
@@ -78,6 +78,29 @@ body{
 
 .md-typeset details summary, .md-typeset .admonition-title {
     font-size: .7rem;
+}
+
+.md-copyright {
+    width: 100%;
+    display: flex; 
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.github-last-updated {
+    line-height: 0;
+    float: right;
+}
+
+/* .github-last-updated img{
+    height: 32px;
+} */
+
+.md-footer-meta__inner {
+    overflow: hidden;
+    padding: 0;
 }
 
 /* .md-footer__inner{
