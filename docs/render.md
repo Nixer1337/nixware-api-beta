@@ -1,6 +1,9 @@
 # render
 ## Functions
 
+{{ define_function("render", "screen_size", [
+], "vec2_t") }}
+---
 {{ define_function("render", "setup_texture", [
     ["filename", "string", "Path to the texture"],
 ], "texture_t") }}
