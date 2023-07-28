@@ -1,6 +1,19 @@
 # render
 ## Functions
 
+{{ define_function("render", "setup_texture", [
+    ["filename", "string", "Path to the texture"],
+], "texture_t") }}
+!!! warning
+    If you specify a texture that does not exist, return value will be `nil`.
+??? example
+    ``` lua linenums="1"
+    local texture = render.setup_texture("C:/Nixware/example.png")
+    register_callback("paint", function()
+        render.texture(texture, vec2_t.new(100, 100), vec2_t.new(200, 200))
+    end)
+    ```
+---
 {{ define_function("render", "setup_font", [
     ["filename", "string", "Path to the font"],
     ["size",     "number", "Font size"],
@@ -40,6 +53,13 @@
     ```
 ---
 ## Draw functions
+{{ define_function("render", "texture", [
+    ["texture",     "texture_t",    "Texture object"],
+    ["from",        "vec2_t",       "Start position of the texture"],
+    ["to",          "vec2_t",       "End position of the texture"],
+    ["color",       "color_t",      "Texture color", true],
+]) }}
+---
 {{ define_function("render", "text", [
     ["text",    "string",  "Text to render"],
     ["font",    "font_t",  "Font object, or `0` = default font, or `1` = pixel font"],
