@@ -9,3 +9,5 @@
     ["text", "string", "Text to print"],
     ["color", "color_t", "Text color", true],
 ]) }}
+!!! info 
+    You can put `\0` in the end of the text to prevent newline

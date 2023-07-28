@@ -66,3 +66,5 @@ plugins:
 watch:
   - main.py
   - overrides/
+validation:
+  absolute_links: ignore
