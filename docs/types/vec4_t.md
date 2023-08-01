@@ -2,4 +2,5 @@
     ["x", "number"],
     ["y", "number"],
     ["z", "number"],
+    ["h", "number"],
 ]) }}

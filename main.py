@@ -26,7 +26,10 @@ def define_env(env):
         def __init__(self, table):
             self.name = table[0]
             self.type = table[1]
-            self.description = table[2]
+            if len(table) >= 3:
+                self.description = table[2]
+            else:
+                self.description = ""
             if len(table) == 4:
                 self.is_optional = table[3]
             else:
@@ -48,18 +51,25 @@ def define_env(env):
     
     @env.macro
     def get_arguments_table(temp_args: list[list]):
+        if len(temp_args) <= 0:
+            return ""
+        description_present = False
         markdown_arguments_list: list[list[str | None]] = [["Name", "Type", "Description"]]
         for temp_arg in temp_args:
             arg = argument(temp_arg)
+            if arg.description != "":
+                description_present = True
             if arg.is_optional:
                 arg.description = f"Optional. {arg.description}"
             if arg.type[0] == '"' or arg.type[0] == "'":
                 pass
             else:
                 markdown_arguments_list.append([f"**{arg.name}**", format_lua_type(arg.type), arg.description])
-        if len(temp_args) > 0:
-            return generate_markdown(table_from_string_list(rows=markdown_arguments_list))
-        return ""
+        
+        if not description_present:
+            markdown_arguments_list[0][2] = None
+        
+        return generate_markdown(table_from_string_list(rows=markdown_arguments_list))
     
     @env.macro
     def get_function_definition(table_name: str, func_name: str, temp_args: list[list], return_type: str = "", is_not_static: bool = False):

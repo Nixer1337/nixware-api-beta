@@ -120,6 +120,12 @@
     local color_picker = menu.add_color_picker("test", "Ragebot/Globals")
     ```
 ---
+{{ define_function("menu", "add_button", [
+    ["label",    "string",  "Label of the button"],
+    ["location", "string",  "Location of the button"],
+    ["callback", "function", "Callback which will be executed when the button is pressed"],
+], "color_picker_t") }}
+---
 ## Functions to find elements
 {{ define_function("menu", "find_check_box", [
     ["label",    "string", "Label of the check box"],
@@ -169,5 +175,9 @@
 ], "color_picker_t") }}
 ---
 ## Other functions
+{{ define_function("menu", "get_menu_rect", [], "vec4_t")}}
+---
+{{ define_function("menu", "is_visible", [], "boolean")}}
+---
 {{ define_function("menu", "dump", []) }}
 Prints all elements to console

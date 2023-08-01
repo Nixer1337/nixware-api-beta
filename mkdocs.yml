@@ -17,6 +17,7 @@ nav:
   - 'types':
     - 'vec2_t': 'types/vec2_t.md'
     - 'vec3_t': 'types/vec3_t.md'
+    - 'vec4_t': 'types/vec4_t.md'
     - 'angle_t': 'types/angle_t.md'
     - 'color_t': 'types/color_t.md'
     - 'user_cmd_t': 'types/user_cmd_t.md'
