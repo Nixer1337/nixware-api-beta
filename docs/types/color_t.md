@@ -1,5 +1,5 @@
 {{ get_arguments_table([
-    ["r", "boolean"],
+    ["r", "number"],
     ["g", "number"],
     ["b", "number"],
     ["a", "number"],
