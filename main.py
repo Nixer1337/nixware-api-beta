@@ -43,6 +43,7 @@ def define_env(env):
                 return f"/{lua_types[key]}/"
         return ""
     
+    @env.macro
     def format_lua_type(type_name) -> str:
         type_link = get_type_link(type_name)
         if type_link != "":
