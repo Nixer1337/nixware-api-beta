@@ -124,7 +124,13 @@
     ["label",    "string",  "Label of the button"],
     ["location", "string",  "Location of the button"],
     ["callback", "function", "Callback which will be executed when the button is pressed"],
-], "color_picker_t") }}
+], "button_t") }}
+??? example
+    ``` lua linenums="1"
+    local my_button = menu.add_button("My button", "Misc/Misc", function()
+        print("My button exec!")
+    end)
+    ```
 ---
 ## Functions to find elements
 {{ define_function("menu", "find_check_box", [

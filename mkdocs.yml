@@ -12,6 +12,7 @@ nav:
       - 'multi_combo_box_t': 'menu/types/multi_combo_box_t.md'
       - 'key_bind_t': 'menu/types/key_bind_t.md'
       - 'color_picker_t': 'menu/types/color_picker_t.md'
+      - 'button_t': 'menu/types/button_t.md'
   - 'globals.md'
   - 'events.md'
   - 'types':
