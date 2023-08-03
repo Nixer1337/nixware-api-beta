@@ -176,6 +176,23 @@
 ---
 ## Other functions
 {{ define_function("menu", "get_menu_rect", [], "vec4_t")}}
+??? example
+    ``` lua linenums="1"
+    register_callback("paint", function()
+        if menu.is_visible() then
+            local menu_rect = menu.get_menu_rect()
+
+            render.rect_filled_fade(
+                vec2_t.new(menu_rect.x - 5, menu_rect.y - 5),
+                vec2_t.new(menu_rect.z + 5, menu_rect.w + 5),
+                color_t.new(1, 0, 0, 0.3),
+                color_t.new(0, 0, 1, 0),
+                color_t.new(0, 0, 1, 0.3),
+                color_t.new(1, 0, 0, 0)
+            )
+        end
+    end)
+    ```
 ---
 {{ define_function("menu", "is_visible", [], "boolean")}}
 ---
