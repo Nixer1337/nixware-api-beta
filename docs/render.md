@@ -146,7 +146,30 @@
 ]) }}
 ---
 {{ define_function("render", "pop_clip_rect", []) }}
-
+---
+## World draw functions
+{{ define_function("render", "circle_3d", [
+    ["pos",       "vec3_t",  "Position of the circle"],
+    ["radius",    "number",  "Radius of the circle"],
+    ["color",     "color_t", "Color of the circle"],
+    ["thickness", "number",   "Thickness of the circle", true],
+    ["normal",    "vec3_t",  "Rotation of the circle", true],
+]) }}
+---
+{{ define_function("render", "circle_filled_3d", [
+    ["pos",    "vec3_t",  "Position of the circle"],
+    ["radius", "number",  "Radius of the circle"],
+    ["color",  "color_t", "Color of the circle"],
+    ["normal", "vec3_t",  "Rotation of the circle", true],
+]) }}
+---
+{{ define_function("render", "circle_fade_3d", [
+    ["pos",       "vec3_t",  "Position of the circle"],
+    ["radius",    "number",  "Radius of the circle"],
+    ["color_in",  "color_t", "Color of the center of the circle"],
+    ["color_out", "color_t", "Color of the edge of the circle"],
+    ["normal",    "vec3_t",  "Rotation of the circle", true],
+]) }}
 
 
 
