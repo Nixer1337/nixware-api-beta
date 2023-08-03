@@ -4,6 +4,7 @@
 {{ define_function("render", "screen_size", [
 ], "vec2_t") }}
 ---
+<!--
 {{ define_function("render", "setup_texture", [
     ["filename", "string", "Path to the texture"],
 ], "texture_t") }}
@@ -17,6 +18,7 @@
     end)
     ```
 ---
+-->
 {{ define_function("render", "setup_font", [
     ["filename", "string", "Path to the font"],
     ["size",     "number", "Font size"],
@@ -56,6 +58,7 @@
     ```
 ---
 ## Draw functions
+<!--
 {{ define_function("render", "texture", [
     ["texture",     "texture_t",    "Texture object"],
     ["from",        "vec2_t",       "Start position of the texture"],
@@ -63,11 +66,12 @@
     ["color",       "color_t",      "Texture color", true],
 ]) }}
 ---
+-->
 {{ define_function("render", "text", [
     ["text",    "string",  "Text to render"],
     ["font",    "font_t",  "Font object, or `0` = default font, or `1` = pixel font"],
     ["pos",     "vec2_t",  "Position of where text will be rendered"],
-    ["color",   "color_t", "Text color"],
+    ["color",   "color_t", "Text color", true],
     ["size",    "number",  "Text size", true],
 ]) }}
 ---
