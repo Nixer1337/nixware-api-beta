@@ -20,6 +20,7 @@ nav:
     - 'vec4_t': 'types/vec4_t.md'
     - 'angle_t': 'types/angle_t.md'
     - 'color_t': 'types/color_t.md'
+    - 'convar_t': 'types/convar_t.md'
     - 'user_cmd_t': 'types/user_cmd_t.md'
     - 'game_event_t': 'types/game_event_t.md'
 theme:
