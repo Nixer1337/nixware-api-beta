@@ -13,9 +13,9 @@ nav:
       - 'key_bind_t': 'menu/types/key_bind_t.md'
       - 'color_picker_t': 'menu/types/color_picker_t.md'
       - 'button_t': 'menu/types/button_t.md'
-  - 'globals.md'
   - 'events.md'
   - 'cvars.md'
+  - 'globals.md'
   - 'types':
     - 'vec2_t': 'types/vec2_t.md'
     - 'vec3_t': 'types/vec3_t.md'
@@ -25,6 +25,7 @@ nav:
     - 'convar_t': 'types/convar_t.md'
     - 'user_cmd_t': 'types/user_cmd_t.md'
     - 'game_event_t': 'types/game_event_t.md'
+  - 'environment.md'
 theme:
   name: material
   logo: assets/logo.png
