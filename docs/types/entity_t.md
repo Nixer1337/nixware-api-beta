@@ -18,7 +18,7 @@ Returns abs origin of the entity
 ---
 ## Getting FFI pointer
 To get entity pointer you can use `entity[0]`  
-Also you can use `entity[ADDRESS]` to get address pointing to any offset of the entity
+Also you can use `entity[OFFSET]` to get the address pointing to specified offset of the entity
 Hexadecimal and decimal number are both supported
 !!! example
     This example will print money of all players
