@@ -2,7 +2,7 @@
 
 {{ define_function("entitylist", "get", [
     ["idx_or_user_id", "number", "Index or User ID of the player"],
-    ["is_user_id", "boolean", "Is value a User ID"]
+    ["is_user_id", "boolean", "Defaults to `false`. Is `value` a user ID", true]
 ], "entity_t") }}
 ---
 {{ define_function("entitylist", "get_local_player", [], "entity_t") }}
