@@ -45,6 +45,8 @@ def define_env(env):
     
     @env.macro
     def format_lua_type(type_name) -> str:
+        if type_name.startswith("["):
+            return type_name
         type_link = get_type_link(type_name)
         if type_link != "":
             return f"[`{type_name}`]({type_link})"
