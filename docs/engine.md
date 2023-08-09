@@ -66,8 +66,8 @@
     ["prop_name", "string", "Name of the property"]
 ], "number") }}
 ---
-{{ define_function("engine", "get_view_angles", [], "vec3_t") }}
+{{ define_function("engine", "get_view_angles", [], "angle_t") }}
 ---
 {{ define_function("engine", "set_view_angles", [
-    ["angles", "vec3_t", "New view angles"]
+    ["angles", "angle_t", "New view angles"]
 ]) }}
