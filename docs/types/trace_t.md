@@ -14,10 +14,10 @@
     ["world_surface_index", "number",                    "Index of the `msurface2_t`, if applicable"],
     ["entity",              "entity_t",                  "Entity that was hit by the trace"],
     ["hitbox",              "number",                    "Hitbox that was hit by the trace"],
-    ["did_hit",             "boolean",                   "Returns `true` if there was any kind of impact at all"],
-    ["did_hit_world",       "boolean",                   "Returns `true` if the entity points at the world entity"],
-    ["did_hit_non_world",   "boolean",                   "Returns `true` if the trace hit something and it wasn't the world"],
-    ["is_visible",          "boolean",                   "Returns `true` if the final position is visible"]
+    ["did_hit",             "function",                  "Returns `true` if there was any kind of impact at all"],
+    ["did_hit_world",       "function",                  "Returns `true` if the entity points at the world entity"],
+    ["did_hit_non_world",   "function",                  "Returns `true` if the trace hit something and it wasn't the world"],
+    ["is_visible",          "function",                  "Returns `true` if the final position is visible"]
 ]) }}
 
 ---
