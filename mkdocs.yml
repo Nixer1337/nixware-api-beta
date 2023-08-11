@@ -30,6 +30,7 @@ nav:
     - 'convar_t': 'types/convar_t.md'
     - 'user_cmd_t': 'types/user_cmd_t.md'
     - 'game_event_t': 'types/game_event_t.md'
+    - 'view_setup_t': 'types/view_setup_t.md'
   - 'environment.md'
 theme:
   name: material
