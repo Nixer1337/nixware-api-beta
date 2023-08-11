@@ -15,4 +15,5 @@
     ["delta_tick",              "number",           "Last valid received server tick"],
     ["is_connected",            "boolean",          "Is client connected to server or loading in game"],
     ["is_in_game",              "boolean",          "Is client loaded to server and in game"],
+    ["camera_in_third_person",  "boolean",          "Is camera in third person"]
 ]) }}

@@ -1,5 +1,9 @@
 # engine
 
+{{ define_function("engine", "execute_client_cmd", [
+    ["command", "string", "Command to execute"],
+]) }}
+
 ### trace_line
 === "Skip single entity"
     {{ get_function_table_and_definition("engine", "trace_line", [
