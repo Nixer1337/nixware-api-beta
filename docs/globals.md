@@ -2,6 +2,7 @@
 
 {{ get_arguments_table([
     ["cur_time",                "number",           "Current server time in seconds"],
+    ["real_time",               "number",           "Current local time in seconds"],
     ["frame_time",              "number",           "Time that was used to render a last game frame in seconds"],
     ["frame_count",             "number",           "Total rendered frames count"],
     ["absolute_frame_time",     "number",           "Time that was used to render a last game frame in seconds"],
