@@ -33,7 +33,7 @@
     ```
 
 {{ define_function("esp.enemy", "add_text", [
-    ["bar_name",      "string",   "Name of the indicator"],
+    ["text_name",     "string",   "Name of the indicator"],
     ["preview_value", "string",   "Preview value of the indicator"],
     ["callback",      "function", "Function that receives " + format_lua_type("entity_t") + " in the argument, and should return a `string` value. If returns `nil` then indicator will not be drawn"]
 ], "", True) }}
