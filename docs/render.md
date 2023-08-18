@@ -71,7 +71,7 @@
     ["text",    "string",  "Text to render"],
     ["font",    "font_t",  "Font object, or `0` = default font, or `1` = pixel font"],
     ["pos",     "vec2_t",  "Position of where text will be rendered"],
-    ["color",   "color_t", "Text color", true],
+    ["color",   "color_t", "Text color"],
     ["size",    "number",  "Text size", true],
 ]) }}
 ---
