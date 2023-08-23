@@ -3,6 +3,11 @@
 {{ define_function("engine", "execute_client_cmd", [
     ["command", "string", "Command to execute"],
 ]) }}
+---
+{{ define_function("engine", "set_clan_tag", [
+    ["clan_tag", "string", "Clan tag"],
+    ["clan_name", "string", "Clan name (team name in scoreboard)", true],
+]) }}
 
 ### trace_line
 === "Skip single entity"

@@ -9,6 +9,12 @@
     ["func", "function", "Callback function"],
 ]) }}
 ---
+{{ define_function("", "find_pattern", [
+    ["module", 'string', "Module name to search the pattern in"],
+    ["pattern", "string", "Pattern to search for"],
+    ["offset", "number", "Byte offset", true],
+], "void*") }}
+---
 {{ define_function("", "print", [
     ["text", "string", "Text to print"],
     ["color", "color_t", "Text color", true],
