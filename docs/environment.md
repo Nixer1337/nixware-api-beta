@@ -16,6 +16,11 @@
 ], "userdata") }}
 !!! warning
     If pattern is not found, return value will be `nil`
+
+---
+{{ define_function("", "get_user_name", [], "string") }}
+Returns the name of the cheat user
+
 ---
 {{ define_function("", "print", [
     ["text", "string", "Text to print"],
