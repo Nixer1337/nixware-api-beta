@@ -1,11 +1,13 @@
+## Getters
 {{ define_function("slider", "get", [], "number", True) }}
 ---
+{{ define_function("slider", "is_visible", [], "boolean", True) }}
+---
+## Setters
 {{ define_function("slider", "set", [
     ["value", "number", "New slider value"]
 ], "", True) }}
-<!-- {{ define_function("slider", "set_visible", [
-    ["is_visible", "boolean", "Is the slider visible"]
+---
+{{ define_function("slider", "set_visible", [
+    ["visibility", "boolean", "Will the element be visible"]
 ], "", True) }}
-{{ define_function("slider", "set_label", [
-    ["label", "string", "New slider label"]
-], "", True) }} -->
