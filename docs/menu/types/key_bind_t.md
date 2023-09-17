@@ -7,7 +7,7 @@
 ---
 {{ define_function("keybind", "get_display_in_list", [], "boolean", True) }}
 ---
-{{ define_function("keybind", "is_visible", [], "boolean", True) }}
+{{ element_getters("keybind") }}
 ---
 ## Setters
 {{ define_function("keybind", "set_type", [
@@ -22,6 +22,4 @@
     ["display_in_list", "boolean", "Display or hide the keybind in the active binds list"]
 ], "", True) }}
 ---
-{{ define_function("keybind", "set_visible", [
-    ["visibility", "boolean", "Will the element be visible"]
-], "", True) }}
+{{ element_setters("keybind") }}

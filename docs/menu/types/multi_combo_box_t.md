@@ -3,7 +3,7 @@
     ["index", "number", "Index of the item to get"]
 ], "boolean", True) }}
 ---
-{{ define_function("multicombobox", "is_visible", [], "boolean", True) }}
+{{ element_getters("multicombobox") }}
 ---
 ## Setters
 {{ define_function("multicombobox", "set", [
@@ -15,6 +15,4 @@
     ["items", "string[]", "New multi combo box items"]
 ], "", True) }}
 ---
-{{ define_function("multicombobox", "set_visible", [
-    ["visibility", "boolean", "Will the element be visible"]
-], "", True) }}
+{{ element_setters("multicombobox") }}

@@ -1,7 +1,7 @@
 ## Getters
 {{ define_function("combobox", "get", [], "number", True) }}
 ---
-{{ define_function("combobox", "is_visible", [], "boolean", True) }}
+{{ element_getters("combobox") }}
 ---
 ## Setters
 {{ define_function("combobox", "set", [
@@ -12,6 +12,4 @@
     ["items", "string[]", "New combo box items"]
 ], "", True) }}
 ---
-{{ define_function("combobox", "set_visible", [
-    ["visibility", "boolean", "Will the element be visible"]
-], "", True) }}
+{{ element_setters("combobox") }}

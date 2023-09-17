@@ -121,3 +121,30 @@ def define_env(env):
     # def inline_avatar(id):
     #     thousands = floor(id / 1000)
     #     return f'<img src="https://nixware.cc/data/avatars/o/{thousands}/{id}.jpg" alt="id {id} avatar" style="transform: translate(0, 20%); height: 1em; border-radius: 100%" />'
+
+    @env.macro
+    def element_getters(table_name):
+        return f"""
+
+{ define_function(table_name, "is_visible", [], "boolean", True) }
+
+---
+
+{ define_function(table_name, "get_label", [], "string", True) }
+
+"""
+    @env.macro
+    def element_setters(table_name):
+        return f"""
+
+{ define_function(table_name, "set_visible", [
+    ["visibility", "boolean", "Will the element be visible"]
+], "", True) }
+
+---
+
+{ define_function(table_name, "set_label", [
+    ["label", "string", "The new label"]
+], "", True) }
+
+"""

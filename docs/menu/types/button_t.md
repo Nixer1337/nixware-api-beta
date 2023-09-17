@@ -1,9 +1,11 @@
+## Main functions
 {{ define_function("button", "execute", [], "", True) }}
 Executes the set callback
 
 ---
-{{ define_function("button", "is_visible", [], "boolean", True) }}
+
+## Getters
+{{ element_getters("button") }}
 ---
-{{ define_function("button", "set_visible", [
-    ["visibility", "boolean", "Will the element be visible"]
-], "", True) }}
+## Setters
+{{ element_setters("button") }}
